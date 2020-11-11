@@ -2,7 +2,16 @@ package com.shanek.hoponaplane.services;
 
 import com.shanek.hoponaplane.models.User;
 
+import java.util.List;
+
 public interface UserService {
+
+    /**
+     * Returns a list of all the Users
+     *
+     * @return List of Users. If no users, empty list.
+     */
+    List<User> findAll();
 
     /**
      * Returns the user with the given primary key.

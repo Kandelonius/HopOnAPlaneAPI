@@ -12,6 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -25,7 +26,7 @@ public class UserController {
 
     /**
      * Returns a single user based off a user id number
-     * <br>Example: http://localhost:2019/users/user/7
+     * <br>Example: http://localhost:1982/users/user/7
      *
      * @param userId The primary key of the user you seek
      * @return JSON object of the user you seek
@@ -35,17 +36,31 @@ public class UserController {
         produces = "application/json")
     public ResponseEntity<?> getUserById(
         @PathVariable
-            Long userId)
-    {
+            Long userId) {
         User u = userService.findUserById(userId);
         return new ResponseEntity<>(u,
             HttpStatus.OK);
     }
 
     /**
+     * Returns a list of all users
+     * <br>Example: <a href="http://localhost:1982/users/all">
+     *
+     * @return JSON list of all users with a status of OK
+     * @see UserService#findAll() UserService.findAll()
+     */
+    @GetMapping(value = "/all",
+        produces = "application/json")
+    public ResponseEntity<?> listAllUsers() {
+        List<User> myUsers = userService.findAll();
+        return new ResponseEntity<>(myUsers,
+            HttpStatus.OK);
+    }
+
+    /**
      * Given a complete User Object, create a new User record and accompanying useremail records
      * and user role records.
-     * <br> Example: <a href="http://localhost:2019/users/user">http://localhost:2019/users/user</a>
+     * <br> Example: <a href="http://localhost:1982/users/user">
      *
      * @param newuser A complete new user to add including emails and roles.
      *                roles must already exist.
@@ -59,8 +74,7 @@ public class UserController {
         @Valid
         @RequestBody
             User newuser) throws
-                          URISyntaxException
-    {
+                          URISyntaxException {
         newuser.setUserid(0);
         newuser = userService.save(newuser);
 
@@ -80,12 +94,12 @@ public class UserController {
     /**
      * Given a complete User Object
      * Given the user id, primary key, is in the User table,
-     * replace the User record and Useremail records.
+     * replace the User record.
      * Roles are handled through different endpoints
-     * <br> Example: <a href="http://localhost:2019/users/user/15">http://localhost:2019/users/user/15</a>
+     * <br> Example: <a href="http://localhost:1982/users/user/15">
      *
-     * @param updateUser A complete User including all emails and roles to be used to
-     *                   replace the User. Roles must already exist.
+     * @param updateUser A complete User to be used to
+     *                   replace the User.
      * @param userid     The primary key of the user you wish to replace.
      * @return status of OK
      * @see UserService#save(User) UserService.save(User)
@@ -97,8 +111,7 @@ public class UserController {
         @RequestBody
             User updateUser,
         @PathVariable
-            long userid)
-    {
+            long userid) {
         updateUser.setUserid(userid);
         userService.save(updateUser);
 
@@ -106,12 +119,12 @@ public class UserController {
     }
 
     /**
-     * Updates the user record associated with the given id with the provided data. Only the provided fields are affected.
-     * Roles are handled through different endpoints
-     * If an email list is given, it replaces the original emai list.
-     * <br> Example: <a href="http://localhost:2019/users/user/7">http://localhost:2019/users/user/7</a>
+     * Updates the user record associated with the given id with the provided data. Only the provided fields are
+     * affected.
+     * <br> Example: <a href="http://localhost:1982/users/user/7">http://localhost:2019/users/user/7</a>
      *
-     * @param updateUser An object containing values for just the fields that are being updated. All other fields are left NULL.
+     * @param updateUser An object containing values for just the fields that are being updated. All other fields are
+     *                  left NULL.
      * @param id         The primary key of the user you wish to update.
      * @return A status of OK
      * @see UserService#update(User, long) UserService.update(User, long)
@@ -122,16 +135,15 @@ public class UserController {
         @RequestBody
             User updateUser,
         @PathVariable
-            long id)
-    {
+            long id) {
         userService.update(updateUser,
             id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     /**
-     * Deletes a given user along with associated emails and roles
-     * <br>Example: <a href="http://localhost:2019/users/user/14">http://localhost:2019/users/user/14</a>
+     * Deletes a given user
+     * <br>Example: <a href="http://localhost:1982/users/user/14">
      *
      * @param id the primary key of the user you wish to delete
      * @return Status of OK
@@ -139,8 +151,7 @@ public class UserController {
     @DeleteMapping(value = "/user/{id}")
     public ResponseEntity<?> deleteUserById(
         @PathVariable
-            long id)
-    {
+            long id) {
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

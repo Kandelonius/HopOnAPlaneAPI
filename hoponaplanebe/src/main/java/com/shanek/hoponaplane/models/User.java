@@ -37,6 +37,11 @@ public class User {
     {
     }
 
+    public User(String username, String password) {
+        setUsername(username);
+        setPassword(password);
+    }
+
     /**
      * Getter for userid
      *

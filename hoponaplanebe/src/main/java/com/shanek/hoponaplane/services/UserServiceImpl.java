@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Implements UserService Interface
@@ -23,37 +25,49 @@ public class UserServiceImpl
     private UserRepository userrepos;
 
     public User findUserById(long id) throws
-                                      ResourceNotFoundException
-    {
+                                      ResourceNotFoundException {
         return userrepos.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("User id " + id + " not found!"));
     }
 
-    @org.springframework.transaction.annotation.Transactional
     @Override
-    public void delete(long id)
-    {
+    public List<User> findAll() {
+        List<User> list = new ArrayList<>();
+        /*
+         * findAll returns an iterator set.
+         * iterate over the iterator set and add each element to an array list.
+         */
+        userrepos.findAll()
+            .iterator()
+            .forEachRemaining(list::add);
+        return list;
+    }
+
+    @Transactional
+    @Override
+    public void delete(long id) {
         userrepos.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("User id " + id + " not found!"));
         userrepos.deleteById(id);
     }
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     @Override
-    public User save(User user)
-    {
+    public User save(User user) {
         User newUser = new User();
 
-        if (user.getUserid() != 0)
-        {
+        if (user.getUserid() != 0) {
             userrepos.findById(user.getUserid())
                 .orElseThrow(() -> new ResourceNotFoundException("User id " + user.getUserid() + " not found!"));
             newUser.setUserid(user.getUserid());
         }
+        newUser.setUsername(user.getUsername()
+            .toLowerCase());
+        newUser.setPasswordNoEncrypt(user.getPassword());
         return userrepos.save(newUser);
     }
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     @Override
     public User update(
         User user,

@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HoponaplaneApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(HoponaplaneApplication.class,
             args);
     }
-
 }
