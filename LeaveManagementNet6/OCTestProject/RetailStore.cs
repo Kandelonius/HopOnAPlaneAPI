@@ -21,9 +21,7 @@ namespace OCTestProject
 
         public RetailStore()
         {
-
         }
-
         public RetailStore(long receiptNumber, DateTime dateOfPurchase, long customerNumber, string customerName, string customerAddress, string customerPhone, long itemNumber, string itemDescription, decimal unitPrice, int quantity)
         {
             ReceiptNumber = receiptNumber;
@@ -43,7 +41,7 @@ namespace OCTestProject
             get { return receiptNumber; }
             set
             {
-                if (receiptNumber > 0)
+                if (value > 0)
                 {
                     receiptNumber = value;
                 }
@@ -55,7 +53,7 @@ namespace OCTestProject
             get { return customerNumber; }
             set
             {
-                if (customerNumber > 0)
+                if (value > 0)
                 {
                     customerNumber = value;
                 }
@@ -69,7 +67,7 @@ namespace OCTestProject
             get { return itemNumber; }
             set
             {
-                if (itemNumber > 0 && itemNumber < 9999)
+                if (value > 0 && value < 9999)
                 {
                     itemNumber = value;
                 }
@@ -81,7 +79,7 @@ namespace OCTestProject
             get { return unitPrice; }
             set
             {
-                if (unitPrice > 0 && unitPrice < 9999m)
+                if (value > 0 && value < 9999m)
                 {
                     unitPrice = value;
                 }
@@ -92,7 +90,7 @@ namespace OCTestProject
             get { return quantity; }
             set
             {
-                if (quantity > 0)
+                if (value > 0)
                 {
                     quantity = value;
                 }
