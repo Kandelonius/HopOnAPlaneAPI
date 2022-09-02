@@ -48,7 +48,7 @@ namespace OCTestProject
             }
         }
         public DateTime DateOfPurchase { get => dateOfPurchase; set => dateOfPurchase = value; }
-        public long CustomerNumber 
+        public long CustomerNumber
         {
             get { return customerNumber; }
             set
