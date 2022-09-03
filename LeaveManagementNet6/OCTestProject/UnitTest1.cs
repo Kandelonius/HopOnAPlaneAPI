@@ -122,5 +122,14 @@ namespace OCTestProject
 
             Assert.AreEqual(102700, total);
         }
+        [TestMethod]
+        [TestCategory("PropertyTax")]
+        public void Current_value_is_given_by_NewAssessedPropertyValue()
+        {
+            PropertyTax property = new PropertyTax(100000M, "home");
+            decimal total = property.PropertyValue;
+
+            Assert.AreEqual(102700, total);
+        }
     }
 }

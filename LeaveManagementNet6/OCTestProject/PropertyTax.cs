@@ -21,6 +21,7 @@ namespace OCTestProject
             PreviousYearPropertyValue = previousYearPropertyValue;
             PropertyAddress = propertyAddress;
             AddedPropertyValue = 2.7;
+            PropertyValue = NewAssessedPropertyValue();
         }
 
         public decimal PropertyValue
