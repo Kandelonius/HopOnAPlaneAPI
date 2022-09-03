@@ -9,7 +9,7 @@ namespace OCTestProject
             //RetailStore customer = new RetailStore();
         }
         [TestMethod]
-        [TestCategory("Negative")]
+        [TestCategory("RetailStore")]
         [ExpectedException(typeof(AssertFailedException))]
         public void Test_Receipt_Number_Cannot_be_Negative()
         {
@@ -19,7 +19,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.ReceiptNumber);
         }
         [TestMethod]
-        [TestCategory("Positive")]
+        [TestCategory("RetailStore")]
         public void Test_Receipt_Number_Can_be_Positive()
         {
             long testNumber = 7;
@@ -28,7 +28,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.ReceiptNumber);
         }
         [TestMethod]
-        [TestCategory("Negative")]
+        [TestCategory("RetailStore")]
         [ExpectedException(typeof(AssertFailedException))]
         public void Test_Customer_Number_Cannot_be_Negative()
         {
@@ -38,7 +38,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.CustomerNumber);
         }
         [TestMethod]
-        [TestCategory("Positive")]
+        [TestCategory("RetailStore")]
         public void Test_Customer_Number_Can_be_Positive()
         {
             long testNumber = 7;
@@ -47,7 +47,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.CustomerNumber);
         }
         [TestMethod]
-        [TestCategory("Negative")]
+        [TestCategory("RetailStore")]
         [ExpectedException(typeof(AssertFailedException))]
         public void Test_Item_Number_Cannot_be_Negative()
         {
@@ -57,7 +57,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.ItemNumber);
         }
         [TestMethod]
-        [TestCategory("Negative")]
+        [TestCategory("RetailStore")]
         [ExpectedException(typeof(AssertFailedException))]
         public void Test_Item_Number_Cannot_be_Too_Large()
         {
@@ -67,7 +67,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.ItemNumber);
         }
         [TestMethod]
-        [TestCategory("Positive")]
+        [TestCategory("RetailStore")]
         public void Test_Item_Number_Can_be_Positive()
         {
             long testNumber = 7;
@@ -76,7 +76,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.ItemNumber);
         }
         [TestMethod]
-        [TestCategory("Negative")]
+        [TestCategory("RetailStore")]
         [ExpectedException(typeof(AssertFailedException))]
         public void Test_Price_Number_Cannot_be_Negative()
         {
@@ -86,7 +86,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.UnitPrice);
         }
         [TestMethod]
-        [TestCategory("Positive")]
+        [TestCategory("RetailStore")]
         public void Test_Price_Number_Can_be_Positive()
         {
             decimal testNumber = 7;
@@ -95,7 +95,7 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.UnitPrice);
         }
         [TestMethod]
-        [TestCategory("Negative")]
+        [TestCategory("RetailStore")]
         [ExpectedException(typeof(AssertFailedException))]
         public void Test_Quantity_Number_Cannot_be_Negative()
         {
@@ -105,13 +105,22 @@ namespace OCTestProject
             Assert.AreEqual(testNumber, customer.Quantity);
         }
         [TestMethod]
-        [TestCategory("Positive")]
+        [TestCategory("RetailStore")]
         public void Test_Quantity_Number_Can_be_Positive()
         {
             int testNumber = 7;
             RetailStore customer = new RetailStore(178L, DateTime.Now, 6174L, "Frank", "Place", "777-777-7777", 781L, "Great Item", 17m, testNumber);
 
             Assert.AreEqual(testNumber, customer.Quantity);
+        }
+        [TestMethod]
+        [TestCategory("PropertyTax")]
+        public void NewAssessedPropertyValue_does_not_lose_precision()
+        {
+            PropertyTax property = new PropertyTax(100000M, "home");
+            decimal total = property.NewAssessedPropertyValue();
+
+            Assert.AreEqual(102700, total);
         }
     }
 }
