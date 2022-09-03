@@ -12,6 +12,7 @@ namespace OCTestProject
         private string propertyAddress;
         private decimal previousYearPropertyValue;
         private double addedPropertyValue;
+        private decimal millageRate;
 
         public PropertyTax()
         {
@@ -22,12 +23,13 @@ namespace OCTestProject
             PropertyAddress = propertyAddress;
             AddedPropertyValue = 2.7;
             PropertyValue = NewAssessedPropertyValue();
+            MillageRate = CalculateMillage();
         }
 
-        public decimal PropertyValue
-        {
-            get => propertyValue;
-            set => propertyValue = value;
+        public decimal PropertyValue 
+        { 
+            get => propertyValue; 
+            set => propertyValue = value; 
         }
         public string PropertyAddress { get => propertyAddress; set => propertyAddress = value; }
         public decimal PreviousYearPropertyValue { get => previousYearPropertyValue; set => previousYearPropertyValue = value; }
@@ -39,10 +41,15 @@ namespace OCTestProject
                 addedPropertyValue = value / 100;
             }
         }
+        public decimal MillageRate { get => millageRate; set => millageRate = value; }
 
         public decimal NewAssessedPropertyValue()
         {
-            return PreviousYearPropertyValue + ((decimal)AddedPropertyValue * PreviousYearPropertyValue);
+            return Decimal.Round(PreviousYearPropertyValue + ((decimal)AddedPropertyValue * PreviousYearPropertyValue), 2);
+        }
+        public decimal CalculateMillage()
+        {
+            return Decimal.Round(((PropertyValue - 25000) / 1000M) * 10.03M, 2);
         }
     }
 }
