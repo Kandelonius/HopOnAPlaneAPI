@@ -140,5 +140,15 @@ namespace OCTestProject
 
             Assert.AreEqual(17.07M, total);
         }
+        [TestMethod]
+        [TestCategory("PropertyTax")]
+        [ExpectedException(typeof(AssertFailedException))]
+        public void Run_To_String()
+        {
+            PropertyTax property = new PropertyTax(26000M, "home");
+            string total = property.ToString();
+
+            Assert.AreEqual("hello", total);
+        }
     }
 }

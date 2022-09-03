@@ -13,6 +13,9 @@ namespace OCTestProject
         private decimal previousYearPropertyValue;
         private double addedPropertyValue;
         private decimal millageRate;
+        private decimal millageValue;
+        private decimal exemption;
+        private decimal taxableValue;
 
         public PropertyTax()
         {
@@ -22,8 +25,12 @@ namespace OCTestProject
             PreviousYearPropertyValue = previousYearPropertyValue;
             PropertyAddress = propertyAddress;
             AddedPropertyValue = 2.7;
+            Exemption = 25000;
+            MillageValue = 10.03M;
             PropertyValue = NewAssessedPropertyValue();
+            TaxableValue = CalculateTaxableValue();
             MillageRate = CalculateMillage();
+            printToString();
         }
 
         public decimal PropertyValue 
@@ -42,6 +49,9 @@ namespace OCTestProject
             }
         }
         public decimal MillageRate { get => millageRate; set => millageRate = value; }
+        public decimal Exemption { get => exemption; set => exemption = value; }
+        public decimal TaxableValue { get => taxableValue; set => taxableValue = value; }
+        public decimal MillageValue { get => millageValue; set => millageValue = value; }
 
         public decimal NewAssessedPropertyValue()
         {
@@ -49,7 +59,25 @@ namespace OCTestProject
         }
         public decimal CalculateMillage()
         {
-            return Decimal.Round(((PropertyValue - 25000) / 1000M) * 10.03M, 2);
+            return Decimal.Round((TaxableValue / 1000M) * MillageValue, 2);
+        }
+        public decimal CalculateTaxableValue()
+        {
+            return PropertyValue - Exemption;
+        }
+        public override string ToString()
+        {
+            return $"Property Address: {PropertyAddress}\n" +
+                $"Last Year Assessed Value: {PreviousYearPropertyValue}\n" +
+                $"Current Assessed Value ${PropertyValue}\n" +
+                $"Exemption: ${Exemption}\n" +
+                $"Taxable Value: ${TaxableValue}\n" +
+                $"Millage Rate (per $1000): ${MillageValue}\n" +
+                $"Taxes Due: ${MillageRate}";
+        }
+        public void printToString()
+        {
+            Console.Write(ToString());
         }
     }
 }
