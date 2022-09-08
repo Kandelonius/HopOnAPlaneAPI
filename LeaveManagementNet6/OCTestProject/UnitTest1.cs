@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace OCTestProject
 {
     [TestClass]
@@ -149,6 +151,29 @@ namespace OCTestProject
             string total = property.ToString();
 
             Assert.AreEqual("hello", total);
+        }
+        [TestMethod]
+        [TestCategory("ListCleaner")]
+        public void Run_List_Cleaner()
+        {
+            {
+                int total = 0;
+                ArrayList dataList = new ArrayList();
+                dataList.Add("Someday");
+                dataList.Add(2);
+                dataList.Add("app");
+                dataList.Add(13.5);
+                dataList.Add("red");
+                dataList.Add(8);
+                dataList.Add(99);
+                dataList.Add("6");
+                dataList.Add("Meatball soup");
+                dataList.Add(18M);
+                dataList.Add("pices");
+                dataList.Add("14");
+
+                Assert.AreEqual("hello", total);
+            }
         }
     }
 }
