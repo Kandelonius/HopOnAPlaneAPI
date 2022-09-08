@@ -172,7 +172,10 @@ namespace OCTestProject
                 dataList.Add("pices");
                 dataList.Add("14");
 
-                Assert.AreEqual("hello", total);
+                ArrayList tesList = ListCleaner.CleanList(dataList);
+                total = ListCleaner.AddListElements(tesList);
+
+                Assert.AreEqual(147, total);
             }
         }
     }
