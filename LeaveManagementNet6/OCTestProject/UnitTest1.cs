@@ -209,5 +209,36 @@ namespace OCTestProject
 
             Assert.AreEqual(expectedString, np.ToString());
         }
+        [TestMethod]
+        [TestCategory("Musical")]
+        public void Can_create_a_Musical_Object()
+        {
+            DateTime dt = new DateTime(2022, 12, 24);
+
+            Musical nm = new Musical(2, dt, "totally play", "d4", "Opera Hall 1", true, 16.50M, "Erik Satie", "Donivan Johnson");
+
+            Assert.IsNotNull(nm);
+        }
+        [TestMethod]
+        [TestCategory("Musical")]
+        public void Ticket_Event_is_Musical_even_when_set_as_otherwise()
+        {
+            DateTime dt = new DateTime(2022, 12, 24);
+
+            Musical nm = new Musical(2, dt, "totally play", "d4", "Opera Hall 1", true, 16.50M, "Erik Satie", "Donivan Johnson");
+
+            Assert.AreEqual("Musical", nm.GetEvent);
+        }
+        [TestMethod]
+        [TestCategory("Musical")]
+        public void Test_Musical_ToString()
+        {
+            DateTime dt = new DateTime(2022, 12, 24);
+
+            Musical nm = new Musical(2, dt, "totally play", "d4", "Opera Hall 1", true, 16.50M, "Erik Satie", "Donivan Johnson");
+            string expectedString = "You are going to see a Musical featuring Donivan Johnson at Opera Hall 1 venue, proceed to seat #d4";
+
+            Assert.AreEqual(expectedString, nm.ToString());
+        }
     }
 }
