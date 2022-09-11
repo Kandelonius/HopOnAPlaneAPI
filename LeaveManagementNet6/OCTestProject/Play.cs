@@ -11,8 +11,9 @@ namespace OCTestProject
         private string playName;
         private bool matinee;
 
-        public Play(int ticketNumber, DateTime eventTime, string ticketEvent, string seatNumber, string eventVenue, bool adult, decimal ticketPrice, string playName, bool matinee) : base(ticketNumber, eventTime, ticketEvent, seatNumber, eventVenue, adult, ticketPrice)
+        public Play(int ticketNumber, DateTime eventTime, string ticketEvent, string seatNumber, string eventVenue, bool adult, decimal ticketPrice, string playName, bool matinee) : base(ticketNumber, eventTime, seatNumber, eventVenue, adult, ticketPrice)
         {
+            ticketEvent = "Play";
             PlayName = playName;
             Matinee = matinee;
         }

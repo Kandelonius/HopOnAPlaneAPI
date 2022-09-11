@@ -16,11 +16,10 @@ namespace OCTestProject
         private bool adult;
         private decimal ticketPrice;
 
-        protected Ticket(int ticketNumber, DateTime eventTime, string ticketEvent, string seatNumber, string eventVenue, bool adult, decimal ticketPrice)
+        protected Ticket(int ticketNumber, DateTime eventTime, string seatNumber, string eventVenue, bool adult, decimal ticketPrice)
         {
             TicketNumber = ticketNumber;
             EventTime = eventTime;
-            TicketEvent = ticketEvent;
             SeatNumber = seatNumber;
             EventVenue = eventVenue;
             Adult = adult;

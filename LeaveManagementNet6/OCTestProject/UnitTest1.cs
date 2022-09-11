@@ -178,5 +178,15 @@ namespace OCTestProject
                 Assert.AreEqual(147, total);
             }
         }
+        [TestMethod]
+        [TestCategory("Play")]
+        public void Can_create_a_Play_Object()
+        {
+            DateTime dt = new DateTime(2022, 12, 24);
+
+            Play np = new Play(2, dt, "not play", "d4", "Outdoor Theater", true, 16.50M, "Captain Turnpike", true);
+
+            Assert.IsNotNull(np);
+        }
     }
 }
