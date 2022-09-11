@@ -10,7 +10,7 @@ namespace OCTestProject
     {
         private int ticketNumber;
         private DateTime eventTime;
-        protected string ticketEvent;
+        private string ticketEvent;
         private string seatNumber;
         private string eventVenue;
         private bool adult;

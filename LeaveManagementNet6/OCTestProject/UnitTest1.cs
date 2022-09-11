@@ -196,7 +196,19 @@ namespace OCTestProject
 
             Play np = new Play(2, dt, "not play", "d4", "Outdoor Theater", true, 16.50M, "Captain Turnpike", true);
 
-            Assert.AreEqual(np.GetEvent, "Play");
+            Assert.AreEqual("Play", np.GetEvent);
+        }
+        [TestMethod]
+        [TestCategory("Play")]
+        public void Test_Play_ToString()
+        {
+            DateTime dt = new DateTime(2022, 12, 24);
+
+            Play np = new Play(2, dt, "not play", "d4", "Outdoor Theater", true, 16.50M, "Captain Turnpike", true);
+            string expectedString = "You are going to see a Play called Captain Turnpike at Outdoor Theater venue, proceed to seat #d4";
+            string actualString = np.ToString();
+
+            Assert.AreEqual(expectedString, np.ToString());
         }
     }
 }

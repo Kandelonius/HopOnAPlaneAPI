@@ -13,7 +13,7 @@ namespace OCTestProject
 
         public Play(int ticketNumber, DateTime eventTime, string ticketEvent, string seatNumber, string eventVenue, bool adult, decimal ticketPrice, string playName, bool matinee) : base(ticketNumber, eventTime, seatNumber, eventVenue, adult, ticketPrice)
         {
-            base.ticketEvent = "Play";
+            base.TicketEvent = "Play";
             PlayName = playName;
             Matinee = matinee;
         }
@@ -22,11 +22,11 @@ namespace OCTestProject
 
         public string GetEvent
         {
-            get => base.ticketEvent;
+            get => base.TicketEvent;
         }
         public override string ToString()
         {
-            return base.ToString();
+            return ($"You are going to see a {base.TicketEvent} called {PlayName} at {base.EventVenue} venue, proceed to seat #{base.SeatNumber}");
         }
     }
 }
