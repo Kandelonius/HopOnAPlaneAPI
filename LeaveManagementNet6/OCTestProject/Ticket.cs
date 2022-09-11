@@ -18,13 +18,13 @@ namespace OCTestProject
 
         protected Ticket(int ticketNumber, DateTime eventTime, string ticketEvent, string seatNumber, string eventVenue, bool adult, decimal ticketPrice)
         {
-            this.TicketNumber = ticketNumber;
-            this.EventTime = eventTime;
-            this.TicketEvent = ticketEvent;
-            this.SeatNumber = seatNumber;
-            this.EventVenue = eventVenue;
-            this.Adult = adult;
-            this.TicketPrice = ticketPrice;
+            TicketNumber = ticketNumber;
+            EventTime = eventTime;
+            TicketEvent = ticketEvent;
+            SeatNumber = seatNumber;
+            EventVenue = eventVenue;
+            Adult = adult;
+            TicketPrice = ticketPrice;
         }
 
         protected int TicketNumber 
