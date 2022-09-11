@@ -32,10 +32,7 @@ namespace OCTestProject
             {
                 addedValue += Convert.ToInt32(item);
             }
-
             return addedValue;
         }
     }
-
-
 }
