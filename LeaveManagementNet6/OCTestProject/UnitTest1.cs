@@ -188,5 +188,15 @@ namespace OCTestProject
 
             Assert.IsNotNull(np);
         }
+        [TestMethod]
+        [TestCategory("Play")]
+        public void Ticket_Event_is_Play_even_when_set_as_otherwise()
+        {
+            DateTime dt = new DateTime(2022, 12, 24);
+
+            Play np = new Play(2, dt, "not play", "d4", "Outdoor Theater", true, 16.50M, "Captain Turnpike", true);
+
+            Assert.AreEqual(np.GetEvent, "Play");
+        }
     }
 }

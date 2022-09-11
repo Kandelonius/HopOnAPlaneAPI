@@ -10,7 +10,7 @@ namespace OCTestProject
     {
         private int ticketNumber;
         private DateTime eventTime;
-        private string ticketEvent;
+        protected string ticketEvent;
         private string seatNumber;
         private string eventVenue;
         private bool adult;
@@ -26,26 +26,26 @@ namespace OCTestProject
             TicketPrice = ticketPrice;
         }
 
-        protected int TicketNumber 
-        { 
-            get => ticketNumber; 
-            set 
-            { 
-                ticketNumber = (value > 0)? value : -1;
-            } 
+        protected int TicketNumber
+        {
+            get => ticketNumber;
+            set
+            {
+                ticketNumber = (value > 0) ? value : -1;
+            }
         }
         protected DateTime EventTime { get => eventTime; set => eventTime = value; }
         protected string TicketEvent { get => ticketEvent; set => ticketEvent = value; }
         protected string SeatNumber { get => seatNumber; set => seatNumber = value; }
         protected string EventVenue { get => eventVenue; set => eventVenue = value; }
         protected bool Adult { get => adult; set => adult = value; }
-        protected decimal TicketPrice 
-        { 
+        protected decimal TicketPrice
+        {
             get => ticketPrice;
-            set 
+            set
             {
-                ticketPrice = (value > 0) ? value : -1; 
-            } 
+                ticketPrice = (value > 0) ? value : -1;
+            }
         }
     }
 }
