@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace LoanProgram
 {
-    internal class AutoLoan
+    internal class AutoLoan : Loan
     {
         private DateTime yearBuilt;
         private string model;
         private string make;
         private string color;
 
-        public AutoLoan(DateTime yearBuilt, string model, string make, string color)
+        public AutoLoan(long loanNumber, string firstName, string lastName, decimal interestRate, decimal loanAmount, int loanTearmInYears, DateTime yearBuilt, string model, string make, string color) : base(loanNumber, firstName, lastName, interestRate, loanAmount, loanTearmInYears)
         {
             YearBuilt = yearBuilt;
             Model = model;
