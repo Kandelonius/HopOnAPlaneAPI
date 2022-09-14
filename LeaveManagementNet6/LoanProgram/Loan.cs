@@ -79,5 +79,6 @@ namespace LoanProgram
                     loanTearmInYears = -1;
             }
         }
+        public abstract decimal CalculateInterest();
     }
 }

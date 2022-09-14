@@ -22,5 +22,12 @@ namespace LoanProgram
         public string Address { get => address; set => address = value; }
         public DateTime YearBuilt { get => yearBuilt; set => yearBuilt = value; }
         public int SquareFootage { get => squareFootage; set => squareFootage = value; }
+
+        public override decimal CalculateInterest()
+        {
+            return (
+                (InterestRate / (LoanTearmInYears / 12)) * (LoanAmount + 5000)
+                );
+        }
     }
 }

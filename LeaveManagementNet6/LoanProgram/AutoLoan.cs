@@ -25,5 +25,10 @@ namespace LoanProgram
         public string Model { get => model; set => model = value; }
         public string Make { get => make; set => make = value; }
         public string Color { get => color; set => color = value; }
+
+        public override decimal CalculateInterest()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
