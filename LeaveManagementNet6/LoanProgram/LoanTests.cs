@@ -12,5 +12,14 @@ namespace LoanProgram
 
             Assert.IsNotNull(hl);
         }
+        [TestMethod]
+        [TestCategory("Loan")]
+        public void CanCreateAutoLoanObject()
+        {
+            DateTime date = new DateTime(2015, 06, 24);
+            AutoLoan al = new(2, "Guy", "Manfred", .05M, 15000M, 5, date, "Integra", "Acura", "Blue");
+
+            Assert.IsNotNull(al);
+        }
     }
 }

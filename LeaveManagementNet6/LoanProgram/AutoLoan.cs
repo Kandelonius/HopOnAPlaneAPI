@@ -28,7 +28,9 @@ namespace LoanProgram
 
         public override decimal CalculateInterest()
         {
-            throw new NotImplementedException();
+            return (
+                (InterestRate / (LoanTearmInYears / 12)) * (LoanAmount + 1000)
+                );
         }
     }
 }
