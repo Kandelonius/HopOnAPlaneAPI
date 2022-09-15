@@ -36,10 +36,10 @@ namespace LoanProgram
         public void HomeCalculateInterestGivingExpectedInfo()
         {
             DateTime date = new DateTime(2001, 06, 24);
-            HomeLoan hl = new HomeLoan(1, "Guy", "Manfred", .35M, 210000M, 30, "Place", date, 2500);
+            HomeLoan hl = new HomeLoan(1, "Guy", "Manfred", .035M, 210000M, 30, "Place", date, 2500);
 
             decimal interest = hl.CalculateInterest();
-            Assert.AreEqual(30100, interest);
+            Assert.AreEqual(3010, interest);
         }
     }
 }
