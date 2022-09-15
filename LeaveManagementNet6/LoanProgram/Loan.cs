@@ -80,5 +80,9 @@ namespace LoanProgram
             }
         }
         public abstract decimal CalculateInterest();
+        public override string ToString()
+        {
+            return $"loan number: {LoanNumber}\nfirst name: {FirstName}\nlast name: {LastName}\ninterest rate: {InterestRate}\nloan amount: {LoanAmount}\nloan tearm in years: {LoanTearmInYears}";
+        }
     }
 }

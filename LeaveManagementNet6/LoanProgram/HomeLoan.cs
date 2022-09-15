@@ -26,8 +26,12 @@ namespace LoanProgram
         public override decimal CalculateInterest()
         {
             return (
-                (InterestRate / (LoanTearmInYears / 12)) * (LoanAmount + 5000)
+                (InterestRate / (Convert.ToDecimal(LoanTearmInYears) / 12)) * (LoanAmount + 5000)
                 );
+        }
+        public override string ToString()
+        {
+            return base.ToString() + $"\naddress: {Address}\nyear built: {YearBuilt}\nsquare footage: {SquareFootage}";
         }
     }
 }

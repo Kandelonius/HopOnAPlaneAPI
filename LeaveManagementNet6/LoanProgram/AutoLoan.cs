@@ -29,7 +29,7 @@ namespace LoanProgram
         public override decimal CalculateInterest()
         {
             return (
-                (InterestRate / (LoanTearmInYears / 12)) * (LoanAmount + 1000)
+                (InterestRate / (Convert.ToDecimal(LoanTearmInYears) / 12M)) * (LoanAmount + 1000)
                 );
         }
     }
