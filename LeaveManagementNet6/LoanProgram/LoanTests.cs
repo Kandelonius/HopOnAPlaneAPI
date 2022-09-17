@@ -41,5 +41,19 @@ namespace LoanProgram
             decimal interest = hl.CalculateInterest();
             Assert.AreEqual(3010, interest);
         }
+        [TestMethod]
+        [TestCategory("ITDD")]
+        public void Test_Page1()
+        {
+            IPageObject pageObject1 = new PageObjectOne();
+            Assert.AreEqual(pageObject1.PageName, "Page Name 1");
+        }
+        [TestMethod]
+        [TestCategory("ITDD")]
+        public void Test_Page2()
+        {
+            IPageObject pageObject2 = new PageObjectTwo();
+            Assert.AreEqual(pageObject2.PageName, "Page Name 2");
+        }
     }
 }
