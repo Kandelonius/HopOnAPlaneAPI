@@ -46,14 +46,14 @@ namespace LoanProgram
         public void Test_Page1()
         {
             IPageObject pageObject1 = new PageObjectOne();
-            Assert.AreEqual(pageObject1.PageName, "Page Name 1");
+            Assert.AreEqual("Page Name 1", pageObject1.PageName);
         }
         [TestMethod]
         [TestCategory("ITDD")]
         public void Test_Page2()
         {
             IPageObject pageObject2 = new PageObjectTwo();
-            Assert.AreEqual(pageObject2.PageName, "Page Name 2");
+            Assert.AreEqual("Page Name 2", pageObject2.PageName);
         }
     }
 }
