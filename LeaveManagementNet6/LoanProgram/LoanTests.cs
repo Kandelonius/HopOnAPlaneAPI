@@ -59,6 +59,14 @@ namespace LoanProgram
         [TestCategory("Test Exam")]
         public void Test_Weekly_Wages()
         {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
         }
 
         [TestMethod]
