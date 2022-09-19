@@ -55,5 +55,22 @@ namespace LoanProgram
             IPageObject pageObject2 = new PageObjectTwo();
             Assert.AreEqual("Page Name 2", pageObject2.PageName);
         }
+        [TestMethod]
+        [TestCategory("Test Exam")]
+        public void Test_Weekly_Wages()
+        {
+        }
+
+        [TestMethod]
+        [TestCategory("Test Exam")]
+        public void Test_Calc_Result()
+        {
+        }
+
+        [TestMethod]
+        [TestCategory("Test Exam")]
+        public void Test_Number_Check()
+        {
+        }
     }
 }
