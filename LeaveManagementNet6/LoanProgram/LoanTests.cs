@@ -61,11 +61,11 @@ namespace LoanProgram
         {
             try
             {
-
+                ExamHelper.WeeklyWages();
             }
-            catch
+            catch(IndexOutOfRangeException ex)
             {
-
+                Console.WriteLine(ex);
             }
         }
 
@@ -73,12 +73,28 @@ namespace LoanProgram
         [TestCategory("Test Exam")]
         public void Test_Calc_Result()
         {
+            try
+            {
+                ExamHelper.CalculateResult();
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         [TestMethod]
         [TestCategory("Test Exam")]
         public void Test_Number_Check()
         {
+            try
+            {
+                ExamHelper.NumberCheck();
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }
