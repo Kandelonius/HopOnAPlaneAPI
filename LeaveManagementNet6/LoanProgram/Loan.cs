@@ -25,8 +25,8 @@ namespace LoanProgram
             LoanTearmInYears = loanTearmInYears;
         }
 
-        protected long LoanNumber 
-        { 
+        protected long LoanNumber
+        {
             get => loanNumber;
             set
             {
@@ -40,8 +40,8 @@ namespace LoanProgram
         }
         protected string FirstName { get => firstName; set => firstName = value; }
         protected string LastName { get => lastName; set => lastName = value; }
-        protected decimal InterestRate 
-        { 
+        protected decimal InterestRate
+        {
             get => interestRate;
             set
             {
@@ -53,8 +53,8 @@ namespace LoanProgram
                     interestRate = -1;
             }
         }
-        protected decimal LoanAmount 
-        { 
+        protected decimal LoanAmount
+        {
             get => loanAmount;
             set
             {
@@ -66,8 +66,8 @@ namespace LoanProgram
                     loanAmount = -1;
             }
         }
-        protected int LoanTearmInYears 
-        { 
+        protected int LoanTearmInYears
+        {
             get => loanTearmInYears;
             set
             {
