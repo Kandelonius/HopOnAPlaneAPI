@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCTestProject", "OCTestProj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleQuiz", "ConsoleQuiz\ConsoleQuiz.csproj", "{C6316AD7-4438-4192-84C8-96F664174353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanProgram", "LoanProgram\LoanProgram.csproj", "{1912669F-D6AF-48B6-9EA5-B4EBC5EF042F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanProgram", "LoanProgram\LoanProgram.csproj", "{1912669F-D6AF-48B6-9EA5-B4EBC5EF042F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HousingExam", "HousingExam\HousingExam.csproj", "{371FB5E5-0E28-4042-BEA7-985439647C20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1912669F-D6AF-48B6-9EA5-B4EBC5EF042F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1912669F-D6AF-48B6-9EA5-B4EBC5EF042F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1912669F-D6AF-48B6-9EA5-B4EBC5EF042F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371FB5E5-0E28-4042-BEA7-985439647C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371FB5E5-0E28-4042-BEA7-985439647C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371FB5E5-0E28-4042-BEA7-985439647C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371FB5E5-0E28-4042-BEA7-985439647C20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
