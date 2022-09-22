@@ -35,7 +35,7 @@ namespace HousingExam.housing
 
         public override string ToString()
         {
-            return $"Complex name: {ComplexName}\nNumber of units: {NumberOfUnits}\nRent per unit: {RentPerUnit}\n" + base.ToString();
+            return $"Complex name: {ComplexName}\nNumber of units: {NumberOfUnits}\nRent per unit: ${RentPerUnit}\n" + base.ToString();
         }
     }
 }
