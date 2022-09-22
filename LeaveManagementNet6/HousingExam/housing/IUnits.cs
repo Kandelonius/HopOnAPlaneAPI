@@ -8,6 +8,6 @@ namespace HousingExam.housing
 {
     internal interface IUnits
     {
-        public int NumberOfUnits();
+        public int GetNumUnits();
     }
 }
