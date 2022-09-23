@@ -19,16 +19,28 @@ namespace HousingExam.tests
             singleList.Add(new SingleFamily(3500, 3750, 4, 3M, true, true, "Place 4", "stone", 2015));
             singleList.Add(new SingleFamily(1500, 1500, 3, 2M, true, true, "Place 5", "brick", 2007));
 
-
+            foreach(SingleFamily family in singleList)
+            {
+                Console.WriteLine(family.ToString() + "\n");
+            }
         }
         [TestMethod]
         [TestCategory("Housing Test")]
         public void MultyFamilyTest()
         {
-            List<MultiUnit> singleList = new List<MultiUnit>();
+            List<MultiUnit> multiList = new List<MultiUnit>();
 
             //(string address, string constructionType, int yearBuilt, string complexName, int numberOfUnits, decimal rentPerUnit)
+            multiList.Add(new MultiUnit("place 1", "concrete", 2004, "Shady Glen", 44, 850M));
+            multiList.Add(new MultiUnit("place 2", "concrete", 2004, "Happy Valley", 80, 1250M));
+            multiList.Add(new MultiUnit("place 3", "wood", 2004, "High Volume Petes", 140, 950M));
+            multiList.Add(new MultiUnit("place 4", "stone", 2004, "Saucy Meadow", 6, 1850M));
+            multiList.Add(new MultiUnit("place 5", "concrete", 2004, "Shady Moore", 44, 1050M));
 
+            foreach(MultiUnit unit in multiList)
+            {
+                Console.WriteLine(unit.ToString() + "\n");
+            }
         }
         [TestMethod]
         [TestCategory("Housing Test")]
