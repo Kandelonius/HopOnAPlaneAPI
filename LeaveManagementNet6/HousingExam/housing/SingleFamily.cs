@@ -34,7 +34,7 @@ namespace HousingExam.housing
 
         public override decimal ProjectedRentalAmt()
         {
-            return RentAmount * 12M;
+            return (RentAmount * 12M);
         }
 
         public override string ToString()
