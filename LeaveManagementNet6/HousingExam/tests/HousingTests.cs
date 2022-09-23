@@ -61,7 +61,7 @@ namespace HousingExam.tests
 
             foreach(Housing place in housingList)
             {
-                Console.WriteLine($"Address: {place.Address}\nCost per month: ${place.ProjectedRentalAmt()}\n");
+                Console.WriteLine($"Address: {place.Address}\nCost per month: {place.ProjectedRentalAmt().ToString("C")}\n");
             }
         }
     }
